@@ -4,8 +4,8 @@ pipeline {
 	stages {
 		stage ("Restore dependencies") {
 			when {
-				anyOf {
-					branch "main"
+				expression {
+					return env.BRANCH_NAME == 'main';
 				}
 			}
 			steps {
@@ -15,8 +15,8 @@ pipeline {
 
 		stage ("Build") {
 			when {
-				anyOf {
-					branch "main"
+				expression {
+					return env.BRANCH_NAME == 'main';
 				}
 			}
 			steps {
@@ -26,8 +26,8 @@ pipeline {
 
 		stage ("Test") {
 			when {
-				anyOf {
-					branch "main"
+				expression {
+					return env.BRANCH_NAME == 'main';
 				}
 			}
 			steps {
