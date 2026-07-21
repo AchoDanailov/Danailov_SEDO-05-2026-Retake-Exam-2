@@ -17,6 +17,7 @@ namespace Homies.Tests
     [TestFixture]
     public class EventControllerUnitTests
     {
+        // Random comment
         private HomiesDbContext _dbContext;
         private EventController _controller;
 
